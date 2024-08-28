@@ -1,11 +1,12 @@
 // https://developer.chrome.com/docs/extensions/reference/api/contextMenus
-
-chrome.contextMenus.create({
-  id: "open_in_safari",
-  title: "Safariで開く",
-  type: "normal",
-  contexts: ["link"],
-  targetUrlPatterns: ["https://*/*", "http://*/*"],
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.contextMenus.create({
+    id: "open_in_safari",
+    title: "Safariで開く",
+    type: "normal",
+    contexts: ["link"],
+    targetUrlPatterns: ["https://*/*", "http://*/*"],
+  });
 });
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
