@@ -13,7 +13,7 @@ chrome.runtime.onInstalled.addListener(() => {
     title: "このページをSafariで開く",
     type: "normal",
     contexts: ["page"],
-    targetUrlPatterns: ["https://*/*", "http://*/*"],
+    documentUrlPatterns: ["https://*/*", "http://*/*"],
   });
 });
 
